@@ -1,0 +1,77 @@
+Node JS
+1.EXECUTION OF FILE IS DONE BY---
+node index.js(on hyper terminal)
+
+Read Evaluation Print Loop
+TO ENTER THE CONSOLE:----node
+TO EXIT THE CONSOLE:----(ctrl+c)*2 or .exit
+
+
+//jshint esversion:6
+const fs = require('fs');
+fs.copyFileSync("file1.txt","file2.txt");
+ 
+npm:-node package manager
+npm init          // to instialize npm 
+npm install superheroes     //  to install required packages 
+
+//jshint esversion:6
+const superheroes = require('superheroes');
+
+var mySuperheroName=superheroes.random();
+console.log(mySuperheroName);
+
+const supervillains = require('supervillains');
+
+var mySuperVillianName=supervillains.random();
+console.log(mySuperVillianName);
+
+
+EXPRESS SERVERS:--
+npm install express(npm i express)
+//jshint esversion:6
+const express =require("express");
+const app = express();
+app.get("/",function(req,res){
+  res.send("<h1>Hello</h1>");
+});
+app.get("/contact",function(req,res){
+  res.send("Contact me at:ajinkya642000@gmail.com");
+});
+
+app.get("/about",function(req,res){
+  res.send("<h1>THIS IS ME</h1>");
+});
+
+app.get("/hobbies",function(req,res){
+  res.send("<h1>THIS IS My hobbies</h1>");
+});
+
+app.listen(3000, function(){
+  console.log("Server has started in port 3000");
+});
+
+npm install -g nodemon
+
+CALCULATOR
+//jshint esversion:6
+const express =require("express");
+const bodyParser = require("body-parser");
+
+const app = express();
+app.use(bodyParser.urlencoded({extended: true}));
+
+app.get("/",function(req,res){
+  res.sendFile(__dirname + "/index.html");
+});
+
+app.post("/",function(req,res){
+  var num1=Number(req.body.num1);
+  var num2=Number(req.body.num2);
+  var result = num1 + num2;
+  res.send("The result of the calculation is "+ result);
+});
+
+app.listen(3000, function(){
+  console.log("Server has started in port 3000");
+});
